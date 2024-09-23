@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { SearchPipe } from './search.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,12 +22,14 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
     HomeComponent,
     ProductsComponent,
     LoginComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [
     provideHttpClient()

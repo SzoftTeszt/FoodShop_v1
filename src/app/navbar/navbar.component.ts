@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,4 +12,14 @@ export class NavbarComponent {
     {path:"products", text:"Products"},
     {path:"login", text:"Login"} 
   ];
+  szo=""
+
+  constructor(private search:SearchService){}
+  setSearch(){
+    this.search.setKeresoSzo(this.szo)
+  }
+  setSearch2(event:any){
+    // console.log(event.target.value)
+    this.search.setKeresoSzo(event.target.value)
+  }
 }

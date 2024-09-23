@@ -1,7 +1,7 @@
 <!-- {{products|json}} -->
 
 <div class="row row-cols-1 row-cols-md-4 g-4">
-    <div *ngFor="let product of products" class="col">
+    <div *ngFor="let product of products|search:szo" class="col">
       <div class="card h-100">
         <img [src]="product.kep" class="card-img-top" alt="Élelmiszer kép">
         <div class="card-body">

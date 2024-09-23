@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BaseService {
-  private url="http://localhost:3000/food/"
+  private url="http://localhost:3000/foods/"
   constructor(private http:HttpClient) { 
     this.http.get(this.url).subscribe(
       (adatok)=>console.log(adatok)

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseService } from '../base.service';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-products',
@@ -8,11 +9,15 @@ import { BaseService } from '../base.service';
 })
 export class ProductsComponent {
 
-  products:any=[]  
+  products:any=[] 
+  szo="" 
   
-  constructor(private base:BaseService){
+  constructor(private base:BaseService, private search:SearchService){
     base.getFoods().subscribe(
       (res)=>this.products=res
+    )
+    search.getKeresoSzo().subscribe(
+      (adat)=>this.szo=adat
     )
   }
   deleteFood(food:any){
